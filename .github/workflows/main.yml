@@ -19,8 +19,8 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
         
-      - name: 3. Have Github action build maven projects
-        run: mvn -B package --file pom.xml
+      #- name: 3. Have Github action build maven projects
+       # run: mvn -B package --file pom.xml
         
       - name: 4. List the current direcctory
         run: ls -a
