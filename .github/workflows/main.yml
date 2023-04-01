@@ -25,10 +25,25 @@ jobs:
       - name: 4. List the current direcctory
         run: ls -a
         
-      - name: 5. What is in the target folder
+      - shell: bash
         run: |
-          cd target
-          ls -a
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
+          
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file
+        
+      #- name: 5. What is in the target folder
+       # run: |
+        #  cd target
+         # ls -a
+        
         
         
 
